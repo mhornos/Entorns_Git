@@ -13,7 +13,8 @@ public class Main {
 
         int [][] notes = new int[nAlumnos][nUfs];
 
-        System.out.println(llegirTot(nAlumnos,nUfs,notes));
+        llegirTot(nAlumnos, nUfs, notes);
+
     }
 
     static void llegirTot (int nAlumnos, int nUfs, int[][] notes){
@@ -25,6 +26,7 @@ public class Main {
         for (int i = 0; i < nAlumnos; i++) {
                 leerNotasPorAlumno(nUfs, notes, i);
         }
+        System.out.println("notes = " + Arrays.deepToString(notes));
         return notes;
     }
 
