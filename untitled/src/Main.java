@@ -15,6 +15,7 @@ public class Main {
         String[] noms = new String[nAlumnos];
 
         leerNotasyNombrePorUfs(nAlumnos, nUfs, notes, noms);
+        mostrarNotasFormato(nAlumnos, notes, noms);
 
     }
 
@@ -27,8 +28,8 @@ public class Main {
 
 
         }
-        System.out.println("noms = " + Arrays.toString(noms));
-        System.out.println("notes = " + Arrays.deepToString(notes));
+        //System.out.println("noms = " + Arrays.toString(noms));
+        //System.out.println("notes = " + Arrays.deepToString(notes));
     }
 
     static void leerNotasPorAlumno(int nUfs, int [][] notes, int i){
@@ -38,11 +39,11 @@ public class Main {
     }
 
 
-    static double calcularMedia(int nUfs, int [][] notes, int j){
+    static double calcularMedia(int nUfs, int [][] notes, int fila){
         double notaMedia=0;
 
         for (int i = 0; i < nUfs; i++) {
-            notaMedia = notaMedia + notes[i][j];
+            notaMedia = notaMedia + notes[fila][i];
         }
         if (notaMedia >=5){
             notaMedia = Math.round(notaMedia /nUfs);
@@ -53,10 +54,10 @@ public class Main {
         return  notaMedia;
     }
 
-    static void mostrarNotasFormato(int nAlumnos, int nUfs, int[][] notes, String []noms){
+    static void mostrarNotasFormato(int nAlumnos, int[][] notes, String []noms){
+        System.out.printf("%10s | %10s | %10s | %10s | %10s | %10s", "NOMS", "NOTA UF1", "NOTA UF2", "NOTA UF3", "NOTA UF4", "MITJA");
         for (int i = 0; i < nAlumnos; i++) {
-            for (int j = 0; j < nUfs; j++) {
-            }
+            System.out.printf("\n%10s | %10d | %10d | %10d | %10d | %10d",noms[i], notes[i][0], notes[i][1],notes[i][2],notes[i][3],notes[i][4]);
         }
     }
 
